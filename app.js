@@ -11,7 +11,7 @@ mongoose.connect("mongodb+srv://SZ:topcoder@cluster0-s8cue.mongodb.net/test?retr
 	console.log('ERROR', err.message);
 });
 //mongoose.connect("mongodb://localhost:27017/restful_blog_app", {useNewUrlParser: true });
-//mongoose.set('useFindAndModify', false);
+//mongoose.set('useFindAndModify', false);//for local mongoDB
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static("public"));
