@@ -6,8 +6,12 @@ var bodyParser = require("body-parser"),
 	app = express();
 
 // App config
-mongoose.connect("mongodb://localhost:27017/restful_blog_app", {useNewUrlParser: true });
-mongoose.set('useFindAndModify', false);
+mongoose.connect("mongodb+srv://SZ:topcoder@cluster0-s8cue.mongodb.net/test?retryWrites=true&w=majority", {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false, useCreateIndex: true }).then (() =>{
+}).catch(err => {
+	console.log('ERROR', err.message);
+});
+//mongoose.connect("mongodb://localhost:27017/restful_blog_app", {useNewUrlParser: true });
+//mongoose.set('useFindAndModify', false);
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static("public"));
